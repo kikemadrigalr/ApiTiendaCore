@@ -30,7 +30,7 @@ namespace ApiTiendaCore.Controllers
         {
             //obtener los datos del usuario desde la base de datos
             //
-            //
+            //------------------------------------------------------
 
             if (request.Email == "correo@email.com" && request.Password == "123456")
             {
@@ -47,6 +47,7 @@ namespace ApiTiendaCore.Controllers
                 };
 
                 var tokenHandler = new JwtSecurityTokenHandler();
+
                 var tokenConfig = tokenHandler.CreateToken(tokenDescriptor);
 
                 string tokenCreado = tokenHandler.WriteToken(tokenConfig);

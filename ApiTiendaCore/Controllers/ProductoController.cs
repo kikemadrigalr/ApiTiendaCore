@@ -4,11 +4,13 @@ using ApiTiendaCore.Models; //referencia a la carpeta de modelos
 using System.Data;
 using System.Data.SqlClient; //referencia para la conexion y el manejo de la BD
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;//referencia para la autorizacion del uso del controlador 
 
 namespace ApiTiendaCore.Controllers
 {
     [EnableCors("ReglasCors")] //habilitar cors para controlador
     [Route("api/[controller]")]
+    [Authorize] // restringe el uso de las apis de este controlador
     [ApiController]
     public class ProductoController : ControllerBase
     {
